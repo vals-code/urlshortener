@@ -1,0 +1,10 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>URL Shortener</h2>
+<form th:action="@{/}" th:object="${shortenedURL}" method="POST">
+	<input type="text" id="originalURL" name="originalURL" placeholder="http://www.example.com" th:field="*{originalURL}"></input>
+	<button type="submit">Shorten URL</button>
+	<div th:if="${shortURL}" th:utext="'Link created: &lt;a href=\'' + ${shortURL} + '\'&gt;' + ${shortURL} + '&lt;/a&gt;'"></div>
+</form>
+</body>
+</html>
